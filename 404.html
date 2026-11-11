@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>404 – stránka nenalezena | JMWEB</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1b3be8">
+  <meta name="color-scheme" content="light">
+
+  <!-- Chybová stránka se zobrazuje na libovolné adrese, proto mají cesty pevný základ. -->
+  <base href="/">
+  <script>
+    /* GitHub Pages servíruje web z podadresáře (/JMWEB/). */
+    (function () {
+      var m = /\.github\.io$/.test(location.hostname) && location.pathname.match(/^\/[^\/]+\//);
+      if (m) document.querySelector('base').href = m[0];
+    })();
+  </script>
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/style.css?v=6.0.0">
+  <style>
+    .e404 { min-height: calc(100vh - var(--header-h)); min-height: calc(100svh - var(--header-h)); }
+    .e404 .hero-inner { grid-template-columns: minmax(0, 1fr); align-content: center; }
+    .e404 .hero-copy { max-width: 46rem; }
+    .e404 .hero-lead { margin-bottom: .75rem; }
+    .e404-en { max-width: 34rem; margin-bottom: clamp(2rem, 4vw, 2.75rem); font-size: 1rem; color: var(--fg-soft); }
+    .e404 .status-dot { background: var(--accent); }
+    .e404-no { display: none; }
+    @media (min-width: 56em) {
+      .e404 .hero-inner { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+      .e404-no {
+        display: block;
+        font-family: var(--font-display);
+        font-size: clamp(6rem, 14vw, 13rem);
+        font-weight: 800;
+        line-height: .9;
+        letter-spacing: -.03em;
+        text-align: right;
+        color: rgba(255, 255, 255, .1);
+        -webkit-text-stroke: 2px rgba(255, 255, 255, .6);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="./" aria-label="JMWEB Jan Minařík – úvodní stránka">
+      <span class="brand-word" aria-hidden="true"><span class="brand-jm">JM</span><span class="brand-web">WEB</span></span>
+      <span class="brand-sub" aria-hidden="true">Jan Minařík</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="hero e404 t-blue" aria-labelledby="e404-title">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="status"><span class="status-dot" aria-hidden="true"></span>Chyba 404</p>
+
+        <h1 class="hero-title" id="e404-title">
+          <span class="hero-line"><span>Stránka</span></span>
+          <span class="hero-line hero-line--outline"><span>mimo</span></span>
+          <span class="hero-line"><span>výkres.</span></span>
+        </h1>
+
+        <p class="hero-lead">Tahle adresa neexistuje nebo se přestěhovala. Všechno podstatné najdete na úvodní stránce.</p>
+        <p class="e404-en" lang="en">This page doesn’t exist or has moved. Everything important is on the homepage.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="./"><span>Zpět na úvod</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="mailto:janminarikcz@icloud.com"><span>Napsat e-mail</span></a>
+        </div>
+      </div>
+      <p class="e404-no" aria-hidden="true">404</p>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>

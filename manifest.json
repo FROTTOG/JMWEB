@@ -1,13 +1,17 @@
 {
-  "name": "Jan Minařík — webdesign & fotografie",
-  "short_name": "Jan Minařík",
-  "description": "Weby, e-shopy a fotografie firemních akcí, svateb i rodinných příběhů.",
-  "start_url": "/",
+  "name": "JMWEB – weby a e-shopy na míru",
+  "short_name": "JMWEB",
+  "description": "Jan Minařík – tvorba webových stránek a e-shopů na míru včetně vlastního e-shopového řešení KAVKA.",
+  "lang": "cs",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f2efe6",
-  "theme_color": "#171913",
+  "background_color": "#1b3be8",
+  "theme_color": "#1b3be8",
   "icons": [
-    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
-    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"}
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
   ]
 }
