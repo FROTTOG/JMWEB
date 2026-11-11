@@ -1,240 +1,608 @@
 <!doctype html>
-<html lang="cs">
+<html lang="cs" class="no-js">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jan Minařík — webdesign & fotografie</title>
-  <meta name="description" content="Tvořím weby a e-shopy na míru a fotografuji firemní akce, svatby i rodinné příběhy. Jeden člověk, dvě disciplíny, jednotný vizuální rukopis.">
-  <meta name="keywords" content="tvorba webu, fotograf, firemní fotograf, svatební fotograf, rodinné focení, e-shop na míru, Jan Minařík, JMWEB">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>JMWEB – weby a e-shopy na míru | Jan Minařík</title>
+  <meta name="description" content="Navrhuji a programuji weby a e-shopy na míru – rychlé, přehledné a perfektní i na mobilu. Žádné šablony. Vlastní e-shopové řešení KAVKA. Nabídka zdarma a nezávazně.">
   <meta name="author" content="Jan Minařík">
-  <meta name="theme-color" content="#171913">
-  <meta property="og:title" content="Jan Minařík — webdesign & fotografie">
-  <meta property="og:description" content="Digitální zážitky a opravdové momenty. Weby, e-shopy a fotografie pro firmy i rodiny.">
+  <meta name="theme-color" content="#1b3be8">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://www.jmweb.cz/">
+
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JMWEB">
+  <meta property="og:locale" content="cs_CZ">
   <meta property="og:url" content="https://www.jmweb.cz/">
-  <link rel="icon" href="favicon.ico">
+  <meta property="og:title" content="JMWEB – weby a e-shopy na míru">
+  <meta property="og:description" content="Navrhuji a programuji webové stránky, které vypadají skvěle, fungují rychle a přivádějí zákazníky. Žádné šablony – vše stavím na míru.">
+  <meta property="og:image" content="https://www.jmweb.cz/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="JMWEB – weby a e-shopy na míru">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icon-192.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="preload" href="assets/fonts/archivo-expanded-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/archivo-400-700.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Po úpravě CSS nebo JS zvyšte číslo ?v= zde, ve 404.html a v sw.js. -->
+  <link rel="stylesheet" href="assets/css/style.css?v=6.0.0">
+
+  <script>
+    (function (d) {
+      var h = d.documentElement;
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        var p = new URLSearchParams(location.search).get('lang');
+        var l = (p === 'en' || p === 'cs') ? p : localStorage.getItem('jmweb-lang');
+        if (l === 'en') {
+          h.lang = 'en';
+          h.classList.add('lang-pending');
+          setTimeout(function () { h.classList.remove('lang-pending'); }, 1500);
+        }
+      } catch (e) {}
+    })(document);
+  </script>
+  <script src="assets/js/main.js?v=6.0.0" defer></script>
+
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"ProfessionalService",
-    "name":"Jan Minařík — webdesign & fotografie",
-    "url":"https://www.jmweb.cz/",
-    "email":"janminarikcz@icloud.com",
-    "areaServed":"Česká republika",
-    "founder":{"@type":"Person","name":"Jan Minařík"},
-    "makesOffer":[
-      {"@type":"Offer","name":"Tvorba webových stránek a e-shopů"},
-      {"@type":"Offer","name":"Fotografování firemních akcí"},
-      {"@type":"Offer","name":"Svatební fotografie"},
-      {"@type":"Offer","name":"Rodinné fotografie"}
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "JMWEB – Jan Minařík",
+    "description": "Tvorba webových stránek a e-shopů na míru včetně vlastního e-shopového řešení KAVKA.",
+    "url": "https://www.jmweb.cz/",
+    "image": "https://www.jmweb.cz/assets/img/og-image.png",
+    "email": "janminarikcz@icloud.com",
+    "areaServed": "Česká republika",
+    "founder": { "@type": "Person", "name": "Jan Minařík" },
+    "makesOffer": [
+      { "@type": "Offer", "name": "Tvorba webových stránek na míru" },
+      { "@type": "Offer", "name": "E-shop KAVKA – vlastní e-shopové řešení" },
+      { "@type": "Offer", "name": "Optimalizace a údržba webů" }
     ]
   }
   </script>
-  <style>
-    :root {
-      --ink:#171913; --ink-2:#24271f; --paper:#f2efe6; --paper-2:#e7e2d6;
-      --white:#fbfaf6; --acid:#d8ff63; --coral:#ff795f; --muted:#6d7065;
-      --line:rgba(23,25,19,.16); --radius:26px; --serif:'Instrument Serif',Georgia,serif;
-      --sans:'DM Sans',system-ui,sans-serif;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;scroll-padding-top:90px}
-    body{font-family:var(--sans);background:var(--paper);color:var(--ink);overflow-x:hidden}
-    a{color:inherit} img{display:block;max-width:100%} button{font:inherit}
-    ::selection{background:var(--acid);color:var(--ink)}
-    :focus-visible{outline:3px solid var(--coral);outline-offset:4px}
-    .skip{position:absolute;top:-80px;left:20px;background:var(--acid);padding:12px 18px;z-index:1000;border-radius:8px}.skip:focus{top:20px}
-    .wrap{width:min(1220px,calc(100% - 48px));margin-inline:auto}
-    .eyebrow{display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:700}
-    .eyebrow:before{content:"";width:28px;height:2px;background:currentColor}
-    .display{font-family:var(--serif);font-weight:400;line-height:.92;letter-spacing:-.035em}
-    .section-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:end;margin-bottom:48px}
-    .section-head h2{font-size:clamp(3.2rem,7vw,6.5rem)}
-    .section-head p{font-size:1.08rem;line-height:1.7;color:var(--muted);max-width:580px}
-    .section{padding:120px 0}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:15px 22px;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid var(--ink);transition:.25s ease;cursor:pointer}
-    .btn-dark{background:var(--ink);color:var(--white)}.btn-dark:hover{background:var(--acid);color:var(--ink);transform:translateY(-2px)}
-    .btn-light{background:var(--white);color:var(--ink);border-color:transparent}.btn-light:hover{background:var(--acid);transform:translateY(-2px)}
-    .btn-arrow:after{content:'↗';font-size:1.15em}
-
-    header{position:fixed;inset:0 0 auto;z-index:100;padding:18px 0;transition:.3s}
-    header.scrolled{background:rgba(242,239,230,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-    nav{display:flex;align-items:center;justify-content:space-between;gap:28px}
-    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:700;letter-spacing:-.03em}
-    .brand-mark{width:38px;height:38px;background:var(--ink);color:var(--acid);display:grid;place-items:center;border-radius:50%;font-family:var(--serif);font-size:1.45rem;font-style:italic}
-    .nav-links{display:flex;list-style:none;gap:30px}.nav-links a{text-decoration:none;font-size:.9rem;font-weight:600;position:relative}.nav-links a:after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:2px;background:var(--ink);transition:.25s}.nav-links a:hover:after{right:0}
-    .nav-actions{display:flex;align-items:center;gap:10px}.lang{border:1px solid var(--line);border-radius:999px;padding:5px;display:flex}.lang button{border:0;background:none;padding:6px 9px;border-radius:999px;font-size:.72rem;font-weight:700;cursor:pointer}.lang button.active{background:var(--ink);color:var(--white)}
-    .nav-cta{padding:10px 16px;font-size:.82rem}
-
-    .hero{min-height:100svh;padding:140px 0 70px;display:flex;align-items:center;position:relative}
-    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:68px;align-items:center}
-    .hero-copy{position:relative;z-index:2}.hero-copy .eyebrow{margin-bottom:30px}.hero h1{font-size:clamp(4.6rem,8.4vw,8.3rem)}
-    .hero h1 em{color:var(--coral);font-weight:400}.hero-lead{font-size:1.15rem;line-height:1.7;color:var(--muted);max-width:560px;margin:30px 0}
-    .hero-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.availability{display:flex;align-items:center;gap:9px;font-size:.78rem;font-weight:700}.availability i{display:block;width:9px;height:9px;border-radius:50%;background:#54b454;box-shadow:0 0 0 5px rgba(84,180,84,.14)}
-    .visual{height:650px;position:relative}
-    .visual-main{position:absolute;inset:25px 0 50px 75px;border-radius:170px 170px 26px 26px;overflow:hidden;background:var(--ink)}
-    .visual-main img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
-    .visual-small{position:absolute;left:0;bottom:5px;width:220px;aspect-ratio:4/3;border:9px solid var(--paper);border-radius:20px;overflow:hidden;transform:rotate(-5deg);box-shadow:0 20px 50px rgba(0,0,0,.2)}
-    .visual-small img{width:100%;height:100%;object-fit:cover}.visual-sticker{position:absolute;right:-22px;top:70px;width:128px;height:128px;border-radius:50%;background:var(--acid);display:grid;place-items:center;text-align:center;font-weight:700;font-size:.73rem;line-height:1.25;text-transform:uppercase;letter-spacing:.09em;transform:rotate(9deg)}
-    .visual-tag{position:absolute;right:20px;bottom:17px;background:var(--white);padding:12px 15px;border-radius:12px;font-size:.75rem;font-weight:700;box-shadow:0 12px 30px rgba(0,0,0,.14)}
-    .ticker{border-block:1px solid var(--line);overflow:hidden;background:var(--paper-2)}.ticker-track{display:flex;width:max-content;animation:tick 25s linear infinite;padding:18px 0}.ticker span{font-family:var(--serif);font-size:1.55rem;white-space:nowrap}.ticker span:after{content:'✦';font-family:var(--sans);font-size:.8rem;margin:0 32px;color:var(--coral)}@keyframes tick{to{transform:translateX(-50%)}}
-
-    .services{background:var(--white)}
-    .service-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .service{border:1px solid var(--line);border-radius:var(--radius);padding:32px;min-height:290px;display:flex;flex-direction:column;transition:.3s;position:relative;overflow:hidden}
-    .service:hover{transform:translateY(-6px);box-shadow:0 22px 55px rgba(23,25,19,.1)}.service:nth-child(1){grid-column:span 7;background:var(--acid)}.service:nth-child(2){grid-column:span 5;background:var(--ink);color:var(--white)}.service:nth-child(3),.service:nth-child(4){grid-column:span 6}.service:nth-child(4){background:var(--paper-2)}
-    .service-no{font-size:.72rem;font-weight:700;letter-spacing:.12em;opacity:.55}.service-icon{margin-left:auto;width:50px;height:50px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-size:1.25rem}.service h3{font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);font-weight:400;margin-top:auto}.service p{margin-top:14px;max-width:510px;line-height:1.6;opacity:.72}.service-top{display:flex}
-
-    .photo{background:var(--ink);color:var(--white);position:relative}.photo .section-head p{color:#b4b6ad}.photo .eyebrow{color:var(--acid)}
-    .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.photo-card{position:relative;min-height:520px;border-radius:var(--radius);overflow:hidden;background:#333}.photo-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}.photo-card:hover img{transform:scale(1.04)}.photo-card:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.86))}.photo-info{position:absolute;z-index:2;left:26px;right:26px;bottom:25px}.photo-info .num{font-size:.7rem;letter-spacing:.14em;color:var(--acid);font-weight:700}.photo-info h3{font-family:var(--serif);font-weight:400;font-size:2.5rem;margin:8px 0}.photo-info p{line-height:1.55;color:#d8d8d3;font-size:.9rem}.photo-note{display:flex;justify-content:space-between;align-items:center;margin-top:30px;padding-top:25px;border-top:1px solid rgba(255,255,255,.16);gap:20px}.photo-note p{color:#b4b6ad;max-width:670px;line-height:1.6}
-
-    .kavka-card{background:var(--coral);border-radius:36px;padding:55px;display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;position:relative;overflow:hidden}.kavka-card:after{content:'K';position:absolute;right:-30px;bottom:-115px;font-family:var(--serif);font-size:25rem;color:rgba(255,255,255,.11);line-height:1}.kavka-card h2{font-size:clamp(3.4rem,7vw,6rem);position:relative;z-index:1}.kavka-content{position:relative;z-index:1}.kavka-content>p{font-size:1.1rem;line-height:1.7;max-width:630px}.features{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:30px 0}.feature{display:flex;gap:10px;font-weight:600;font-size:.88rem}.feature:before{content:'✓';width:20px;height:20px;border-radius:50%;background:var(--ink);color:var(--acid);display:grid;place-items:center;font-size:.7rem;flex:none}
-
-    .work{background:var(--paper-2)}.refs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}.ref{padding:28px 24px 28px 0;border-bottom:1px solid var(--line);text-decoration:none;min-height:220px;position:relative}.ref:not(:nth-child(3n)){border-right:1px solid var(--line);margin-right:24px}.ref .arrow{position:absolute;right:24px;top:26px;font-size:1.4rem;transition:.25s}.ref:hover .arrow{transform:translate(4px,-4px)}.ref-type{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700}.ref h3{font-family:var(--serif);font-size:2.2rem;font-weight:400;margin:42px 0 10px}.ref p{color:var(--muted);font-size:.9rem;line-height:1.5}
-
-    .process-list{counter-reset:steps;border-top:1px solid var(--line)}.step{display:grid;grid-template-columns:90px .8fr 1.2fr;gap:30px;padding:30px 0;border-bottom:1px solid var(--line);align-items:start}.step:before{counter-increment:steps;content:'0' counter(steps);font-size:.75rem;font-weight:700;color:var(--coral)}.step h3{font-family:var(--serif);font-size:2rem;font-weight:400}.step p{line-height:1.65;color:var(--muted);max-width:600px}
-
-    .faq{background:var(--white)}.faq-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}.faq h2{font-size:clamp(3.5rem,7vw,6.5rem);position:sticky;top:120px}.faq-items{border-top:1px solid var(--line)}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;padding:25px 0;background:none;border:0;display:flex;justify-content:space-between;gap:20px;text-align:left;font-weight:700;cursor:pointer}.faq-q span:last-child{font-size:1.3rem;transition:.3s}.faq-a{display:grid;grid-template-rows:0fr;transition:.35s}.faq-a>div{overflow:hidden}.faq-a p{color:var(--muted);line-height:1.65;padding:0 35px 25px 0}.faq-item.open .faq-a{grid-template-rows:1fr}.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}
-
-    .contact{background:var(--acid);padding:100px 0 35px}.contact-top{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:end;padding-bottom:75px}.contact h2{font-size:clamp(4.2rem,9vw,9rem);max-width:850px}.contact-side p{font-size:1.08rem;line-height:1.65;margin-bottom:28px}.email{font-family:var(--serif);font-size:clamp(1.35rem,2.4vw,2rem);text-decoration-thickness:1px;text-underline-offset:7px;overflow-wrap:anywhere}.footer{border-top:1px solid rgba(23,25,19,.25);padding-top:25px;display:flex;justify-content:space-between;gap:20px;font-size:.78rem;font-weight:600}
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.reveal.in{opacity:1;transform:none}
-
-    @media(max-width:980px){.nav-links{display:none}.hero-grid{grid-template-columns:1fr}.hero{padding-top:150px}.visual{height:540px}.section-head{grid-template-columns:1fr;gap:22px}.photo-grid{grid-template-columns:1fr 1fr}.photo-card:last-child{grid-column:span 2;min-height:440px}.kavka-card,.faq-layout,.contact-top{grid-template-columns:1fr;gap:38px}.faq h2{position:static}.refs{grid-template-columns:1fr 1fr}.ref:not(:nth-child(3n)){border-right:0;margin-right:0}.ref:nth-child(odd){border-right:1px solid var(--line);margin-right:24px}}
-    @media(max-width:700px){.wrap{width:min(100% - 28px,1220px)}.section{padding:80px 0}.nav-cta{display:none}.hero h1{font-size:clamp(4rem,20vw,6rem)}.hero-grid{gap:32px}.visual{height:460px}.visual-main{inset:10px 0 48px 25px;border-radius:100px 100px 22px 22px}.visual-small{width:150px}.visual-sticker{width:100px;height:100px;right:-5px;font-size:.61rem}.service-grid{display:block}.service{margin-bottom:14px;min-height:260px}.photo-grid{display:block}.photo-card,.photo-card:last-child{min-height:470px;margin-bottom:14px}.photo-note{align-items:flex-start;flex-direction:column}.kavka-card{padding:30px 23px;border-radius:26px}.features{grid-template-columns:1fr}.refs{grid-template-columns:1fr}.ref,.ref:nth-child(odd){border-right:0;margin-right:0}.step{grid-template-columns:45px 1fr}.step p{grid-column:2}.footer{flex-direction:column}.contact{padding-top:75px}.contact-top{padding-bottom:55px}.hero-lead{font-size:1rem}.section-head h2{font-size:clamp(3.2rem,16vw,5rem)}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-track{animation:none}.reveal{opacity:1;transform:none;transition:none}*{transition-duration:.01ms!important}}
-  </style>
 </head>
 <body>
-<a class="skip" href="#main">Přeskočit na obsah</a>
-<header id="header">
-  <nav class="wrap" aria-label="Hlavní navigace">
-    <a class="brand" href="#top" aria-label="Jan Minařík — domů"><span class="brand-mark">Jm</span><span>Jan Minařík</span></a>
-    <ul class="nav-links">
-      <li><a href="#sluzby" data-t="nav_services">Služby</a></li>
-      <li><a href="#fotografie" data-t="nav_photo">Fotografie</a></li>
-      <li><a href="#reference" data-t="nav_work">Reference</a></li>
-      <li><a href="#proces" data-t="nav_process">Proces</a></li>
-    </ul>
-    <div class="nav-actions">
-      <div class="lang" aria-label="Volba jazyka"><button class="active" data-lang="cs">CZ</button><button data-lang="en">EN</button></div>
-      <a class="btn btn-dark nav-cta" href="#kontakt" data-t="nav_contact">Napište mi</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-ne" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 9.5 17 19 7.5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><path d="M9 9h11v11H9zM15 5V4H4v11h1"/></symbol>
+  <symbol id="i-ruler" viewBox="0 0 32 32"><path d="M3 11h26v10H3zM8 11v4M13 11v6M18 11v4M23 11v6"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 32 32"><path d="M5 23a11 11 0 1 1 22 0M16 23l6-8M3 23h26"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 32 32"><path d="M10 3h12v26H10zM14 25h4"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 32 32"><path d="M4 4h12l12 12-12 12L4 16zM10 10h.01"/></symbol>
+  <symbol id="i-window" viewBox="0 0 48 48"><path d="M5 9h38v30H5zM5 17h38M10 13h.01M15 13h.01M20 13h.01M11 24h14M11 30h9M30 24h7v9h-7z"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 48 48"><path d="M4 8h7l5 22h22l4-15H13M19 39h.01M35 39h.01M22 19v6M28 19v6M34 19v6"/></symbol>
+  <symbol id="i-tune" viewBox="0 0 48 48"><path d="M6 36a18 18 0 1 1 36 0M24 36l9-13M4 36h40M24 8v4M10 22l3 2M38 22l-3 2"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Přeskočit na obsah</a>
+
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="JMWEB Jan Minařík – na začátek stránky" data-i18n-attr="aria-label=a11y.brand">
+      <span class="brand-word" aria-hidden="true"><span class="brand-jm">JM</span><span class="brand-web">WEB</span></span>
+      <span class="brand-sub" aria-hidden="true">Jan Minařík</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Hlavní navigace" data-i18n-attr="aria-label=a11y.nav">
+      <ul class="nav-list" role="list">
+        <li><a href="#sluzby"><span class="nav-no" aria-hidden="true">01</span><span data-i18n="nav.services">Služby</span></a></li>
+        <li><a href="#kavka"><span class="nav-no" aria-hidden="true">02</span><span data-i18n="nav.kavka">E-shop KAVKA</span></a></li>
+        <li><a href="#reference"><span class="nav-no" aria-hidden="true">03</span><span data-i18n="nav.work">Reference</span></a></li>
+        <li><a href="#proces"><span class="nav-no" aria-hidden="true">04</span><span data-i18n="nav.process">Postup</span></a></li>
+        <li><a href="#faq"><span class="nav-no" aria-hidden="true">05</span><span data-i18n="nav.faq">Dotazy</span></a></li>
+        <li class="nav-contact"><a href="#kontakt"><span class="nav-no" aria-hidden="true">06</span><span data-i18n="nav.contact">Kontakt</span></a></li>
+      </ul>
+      <p class="nav-mail"><a href="mailto:janminarikcz@icloud.com">janminarikcz@icloud.com</a></p>
+    </nav>
+
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Jazyk" data-i18n-attr="aria-label=a11y.lang">
+        <button type="button" class="lang-btn" data-lang="cs" lang="cs" aria-pressed="true" aria-label="CZ – čeština">CZ</button>
+        <button type="button" class="lang-btn" data-lang="en" lang="en" aria-pressed="false" aria-label="EN – English">EN</button>
+      </div>
+      <a class="btn btn-sm header-cta" href="#kontakt"><span data-i18n="nav.cta">Nezávazná poptávka</span></a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Otevřít menu" data-i18n-attr="aria-label=a11y.menuOpen">
+        <span class="menu-toggle-bars" aria-hidden="true"><span></span><span></span></span>
+      </button>
     </div>
-  </nav>
+  </div>
 </header>
 
 <main id="main">
-  <section class="hero" id="top">
-    <div class="wrap hero-grid">
-      <div class="hero-copy reveal">
-        <div class="eyebrow" data-t="hero_kicker">Webdesign & fotografie</div>
-        <h1 class="display" data-t-html="hero_title">Tvořím weby.<br><em>Chytám momenty.</em></h1>
-        <p class="hero-lead" data-t="hero_text">Pomáhám značkám i lidem vyprávět jejich příběh — čistým webem, funkčním e-shopem nebo fotografiemi, ke kterým se budete rádi vracet.</p>
+
+  <!-- ============ 00 / ÚVOD ============ -->
+  <section class="hero t-blue" id="top" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="status"><span class="status-dot" aria-hidden="true"></span><span data-i18n="hero.status">Přijímám nové projekty</span></p>
+
+        <h1 class="hero-title" id="hero-title">
+          <span class="hero-line"><span data-i18n="hero.t1">Weby</span></span>
+          <span class="hero-line hero-line--outline"><span data-i18n="hero.t2">a e-shopy</span></span>
+          <span class="hero-line"><span class="measure" id="measure"><span data-i18n="hero.t3">na míru.</span><span class="dim" aria-hidden="true"><span class="dim-label" id="measure-label"></span></span></span></span>
+        </h1>
+
+        <p class="hero-lead" data-i18n="hero.lead">Navrhuji a programuji webové stránky, které vypadají skvěle, fungují rychle a přivádějí zákazníky. Žádné šablony – vše stavím na míru vašim cílům.</p>
+
         <div class="hero-actions">
-          <a class="btn btn-dark btn-arrow" href="#sluzby" data-t="hero_cta">Objevit moje služby</a>
-          <span class="availability"><i></i><span data-t="available">Přijímám nové projekty</span></span>
+          <a class="btn btn-primary" href="#kontakt"><span data-i18n="hero.cta1">Nezávazně poptat web</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="#reference"><span data-i18n="hero.cta2">Prohlédnout reference</span></a>
         </div>
       </div>
-      <div class="visual reveal" aria-label="Ukázka fotografické tvorby">
-        <div class="visual-main"><img src="assets/photo-corporate.jpg" alt="Připravený prostor pro firemní konferenci" width="1536" height="1024"></div>
-        <div class="visual-small"><img src="assets/photo-wedding.jpg" alt="Detail svatebních prstenů a květin" width="1536" height="1024"></div>
-        <div class="visual-sticker" data-t-html="sticker">Weby<br>foto<br>& nápady</div>
-        <div class="visual-tag" data-t="tag">Od prvního pixelu po poslední snímek.</div>
+
+      <figure class="hero-figure">
+        <svg class="drawing" viewBox="0 0 620 606" role="img" aria-labelledby="drawing-title" focusable="false">
+          <title id="drawing-title" data-i18n="hero.figTitle">Schematický výkres webu na počítači a v mobilu</title>
+          <!-- desktop: kóta šířky -->
+          <g class="dr dr-dim" style="--d:.9s">
+            <path class="dr-thin" d="M20 16v40M500 16v40"/>
+            <path d="M20 28h480"/>
+            <path class="dr-fill" d="M20 28l9-3.6v7.2zM500 28l-9-3.6v7.2z"/>
+            <text class="dr-text" x="260" y="19" text-anchor="middle">DESKTOP – 1440 px</text>
+          </g>
+          <!-- desktop: okno prohlížeče -->
+          <g class="dr" style="--d:.15s">
+            <rect x="20" y="60" width="480" height="330" rx="8"/>
+            <path d="M20 92h480"/>
+            <circle cx="38" cy="76" r="3.5"/><circle cx="52" cy="76" r="3.5"/><circle cx="66" cy="76" r="3.5"/>
+            <rect class="dr-thin" x="92" y="67" width="220" height="18" rx="9"/>
+          </g>
+          <text class="dr dr-text dr-url" style="--d:.45s" x="104" y="80" data-i18n="hero.figUrl">vasefirma.cz</text>
+          <g class="dr" style="--d:.45s">
+            <path class="dr-fill" d="M40 108h14v14H40z"/>
+            <path class="dr-thin" d="M360 115h32M404 115h32M448 115h32"/>
+            <path class="dr-bar" d="M40 158h228M40 180h172"/>
+            <path class="dr-thin" d="M40 206h236M40 218h210"/>
+            <rect class="dr-accent" x="40" y="238" width="104" height="30" rx="4"/>
+            <rect x="154" y="238" width="84" height="30" rx="4"/>
+            <rect x="312" y="140" width="168" height="128"/>
+            <path class="dr-thin" d="M312 140l168 128M480 140 312 268"/>
+          </g>
+          <g class="dr" style="--d:.7s">
+            <rect x="40" y="292" width="136" height="78"/><rect x="192" y="292" width="136" height="78"/><rect x="344" y="292" width="136" height="78"/>
+            <circle cx="58" cy="312" r="7"/><circle cx="210" cy="312" r="7"/><circle cx="362" cy="312" r="7"/>
+            <path class="dr-bar dr-bar--sm" d="M52 336h84M204 336h84M356 336h84"/>
+            <path class="dr-thin" d="M52 350h58M204 350h58M356 350h58"/>
+          </g>
+          <!-- mobil -->
+          <g class="dr" style="--d:1s">
+            <rect class="dr-cover" x="424" y="206" width="176" height="336" rx="24"/>
+            <rect class="dr-thin" x="492" y="218" width="40" height="6" rx="3"/>
+            <path class="dr-fill" d="M444 244h12v12h-12z"/>
+            <path d="M566 247h14M566 253h14"/>
+            <path class="dr-bar" d="M444 290h116M444 310h84"/>
+            <path class="dr-thin" d="M444 334h136M444 345h112"/>
+            <rect class="dr-accent" x="444" y="364" width="136" height="30" rx="4"/>
+            <rect x="444" y="410" width="136" height="96"/>
+            <path class="dr-thin" d="M444 410l136 96M580 410l-136 96"/>
+            <path class="dr-bar dr-bar--sm" d="M494 526h36"/>
+          </g>
+          <!-- mobil: kóta šířky -->
+          <g class="dr dr-dim" style="--d:1.35s">
+            <path class="dr-thin" d="M424 552v26M600 552v26"/>
+            <path d="M424 568h176"/>
+            <path class="dr-fill" d="M424 568l9-3.6v7.2zM600 568l-9-3.6v7.2z"/>
+            <text class="dr-text" x="512" y="598" text-anchor="middle" data-i18n="hero.figMobile">MOBIL – 390 px</text>
+          </g>
+        </svg>
+        <figcaption class="legend">
+          <dl>
+            <div><dt data-i18n="legend.k1">Projekt</dt><dd data-i18n="legend.v1">váš nový web</dd></div>
+            <div><dt data-i18n="legend.k2">Šablona</dt><dd data-i18n="legend.v2">žádná</dd></div>
+            <div><dt data-i18n="legend.k3">Zobrazení</dt><dd data-i18n="legend.v3">mobil · tablet · počítač</dd></div>
+            <div><dt data-i18n="legend.k4">Měřítko</dt><dd data-i18n="legend.v4">na míru</dd></div>
+          </dl>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="ruler" aria-hidden="true">
+      <p class="ruler-readout"><span data-i18n="hero.screen">Vaše obrazovka</span>: <b id="screen-size">100 %</b><span class="ruler-fit" data-i18n="hero.fit"> – sedí na míru</span></p>
+      <div class="ruler-scale" id="ruler-scale"></div>
+    </div>
+  </section>
+
+  <!-- ============ zásady ============ -->
+  <section class="principles t-white" aria-labelledby="principles-title">
+    <div class="container">
+      <h2 class="sr-only" id="principles-title" data-i18n="principles.title">Na čem stavím</h2>
+      <ul class="principles-list" role="list">
+        <li data-reveal>
+          <svg class="icon icon-lg" aria-hidden="true"><use href="#i-ruler"/></svg>
+          <h3 class="principle-title" data-i18n="principles.1.t">Na míru, bez šablon</h3>
+          <p data-i18n="principles.1.p">Každý web navrhuji od nuly podle vašich cílů a firemní identity.</p>
+        </li>
+        <li data-reveal>
+          <svg class="icon icon-lg" aria-hidden="true"><use href="#i-gauge"/></svg>
+          <h3 class="principle-title" data-i18n="principles.2.t">Rychlý a čistý kód</h3>
+          <p data-i18n="principles.2.p">Web, který se načte svižně a snadno se ovládá.</p>
+        </li>
+        <li data-reveal>
+          <svg class="icon icon-lg" aria-hidden="true"><use href="#i-phone"/></svg>
+          <h3 class="principle-title" data-i18n="principles.3.t">Perfektní i na mobilu</h3>
+          <p data-i18n="principles.3.p">Zobrazení ladím pro telefony, tablety i velké monitory.</p>
+        </li>
+        <li data-reveal>
+          <svg class="icon icon-lg" aria-hidden="true"><use href="#i-tag"/></svg>
+          <h3 class="principle-title" data-i18n="principles.4.t">Jasná cena předem</h3>
+          <p data-i18n="principles.4.p">Transparentní nabídka bez skrytých háčků – zdarma a nezávazně.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 01 / SLUŽBY ============ -->
+  <section class="section t-light" id="sluzby" aria-labelledby="sluzby-title">
+    <div class="container section-grid">
+      <p class="rail" aria-hidden="true"><span class="rail-no">01</span><span class="rail-name" data-i18n="nav.services">Služby</span></p>
+      <div class="section-body">
+        <header class="section-head" data-reveal>
+          <h2 class="h2" id="sluzby-title" data-i18n="services.title">Co pro vás postavím.</h2>
+          <p class="section-intro" data-i18n="services.intro">Od jednoduché firemní prezentace po e-shop s vlastní administrací. Vždy od prvního návrhu přes vývoj až po spuštění a další péči.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card" data-reveal>
+            <div class="card-top"><span class="card-no">S–01</span><svg class="icon icon-xl" aria-hidden="true"><use href="#i-window"/></svg></div>
+            <h3 class="card-title" data-i18n="services.1.t">Weby na míru</h3>
+            <p class="card-text" data-i18n="services.1.p">Moderní, rychlé a přehledné weby bez univerzálních šablon – od firemní vizitky po rozsáhlejší vícestránkovou prezentaci.</p>
+            <ul class="checklist" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.1.l1">Grafický návrh podle vaší značky</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.1.l2">Rychlý a čistý kód</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.1.l3">Perfektní zobrazení na mobilu</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.1.l4">Administrace pro vlastní úpravy (na přání)</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.1.l5">Základní SEO a napojení na analytiku</span></li>
+            </ul>
+            <a class="card-link" href="#kontakt"><span data-i18n="services.1.cta">Poptat web</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+
+          <article class="card card--dark" data-reveal>
+            <div class="card-top"><span class="card-no">S–02</span><svg class="icon icon-xl" aria-hidden="true"><use href="#i-cart"/></svg></div>
+            <h3 class="card-title" data-i18n="services.2.t">E-shop KAVKA</h3>
+            <p class="card-text" data-i18n="services.2.p">Vlastní e-shopové řešení s administrací, skladem, dopravci, kupóny, fakturami a QR platbou. Bez závislosti na cizí šabloně.</p>
+            <ul class="checklist" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.2.l1">Vlastní administrace a editor</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.2.l2">Sklad a chytrý košík</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.2.l3">Zásilkovna a Balíkovna přes API</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.2.l4">Kupóny a slevové kódy</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.2.l5">Faktury, QR platby a export pro účetní</span></li>
+            </ul>
+            <a class="card-link" href="#kavka"><span data-i18n="services.2.cta">Co KAVKA umí</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card-top"><span class="card-no">S–03</span><svg class="icon icon-xl" aria-hidden="true"><use href="#i-tune"/></svg></div>
+            <h3 class="card-title" data-i18n="services.3.t">Optimalizace a údržba</h3>
+            <p class="card-text" data-i18n="services.3.p">Zrychlím váš existující web a vylepším ho, aby fungoval lépe a přiváděl více návštěvníků. A postarám se o něj i dál.</p>
+            <ul class="checklist" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.3.l1">Zrychlení načítání</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.3.l2">Úpravy a vylepšení stávajícího webu</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.3.l3">Pravidelná údržba</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="services.3.l4">Nový obsah podle potřeby</span></li>
+            </ul>
+            <a class="card-link" href="#kontakt"><span data-i18n="services.3.cta">Poptat úpravy</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Weby na míru</span><span>E-shopy KAVKA</span><span>Firemní akce</span><span>Svatby</span><span>Rodinné focení</span><span>Weby na míru</span><span>E-shopy KAVKA</span><span>Firemní akce</span><span>Svatby</span><span>Rodinné focení</span></div></div>
+  <!-- ============ 02 / KAVKA ============ -->
+  <section class="section t-dark kavka" id="kavka" aria-labelledby="kavka-title">
+    <div class="container section-grid">
+      <p class="rail" aria-hidden="true"><span class="rail-no">02</span><span class="rail-name" data-i18n="kavka.rail">E-shop</span></p>
+      <div class="section-body">
+        <header class="kavka-head" data-reveal>
+          <p class="kicker" data-i18n="kavka.kicker">Vlastní e-shopové řešení</p>
+          <h2 class="kavka-word" id="kavka-title">KAVKA</h2>
+          <div class="kavka-intro">
+            <p class="lead" data-i18n="kavka.lead">E-shop, který se přizpůsobí vašemu podnikání – ne naopak. Bez závislosti na cizí šabloně a s funkcemi, které skutečně využijete.</p>
+            <a class="btn btn-primary" href="#kontakt"><span data-i18n="kavka.cta">Chci vlastní e-shop</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </header>
 
-  <section class="section services" id="sluzby">
-    <div class="wrap">
-      <div class="section-head reveal"><div><div class="eyebrow" data-t="services_kicker">Co pro vás udělám</div><h2 class="display" data-t-html="services_title">Dvě disciplíny.<br>Jeden rukopis.</h2></div><p data-t="services_intro">Technické myšlení vývojáře propojuji s citem pro kompozici a příběh. Výsledkem je značka, která skvěle funguje a zároveň má vlastní tvář.</p></div>
-      <div class="service-grid">
-        <article class="service reveal"><div class="service-top"><span class="service-no">01 / WEB</span><span class="service-icon">⌘</span></div><h3 data-t="service_web_h">Weby na míru</h3><p data-t="service_web_p">Moderní, rychlé a přehledné weby bez univerzálních šablon. Od prvního návrhu přes vývoj až po spuštění a péči.</p></article>
-        <article class="service reveal"><div class="service-top"><span class="service-no">02 / SHOP</span><span class="service-icon">↗</span></div><h3 data-t="service_shop_h">E-shopy KAVKA</h3><p data-t="service_shop_p">Vlastní e-shopové řešení s administrací, skladem, dopravci, kupóny, fakturami a QR platbou.</p></article>
-        <article class="service reveal"><div class="service-top"><span class="service-no">03 / PHOTO</span><span class="service-icon">◎</span></div><h3 data-t="service_photo_h">Fotografie</h3><p data-t="service_photo_p">Přirozené fotografování firemních akcí, svateb a rodinných příběhů. Nenápadně, citlivě a bez zbytečného aranžování.</p></article>
-        <article class="service reveal"><div class="service-top"><span class="service-no">04 / CARE</span><span class="service-icon">＋</span></div><h3 data-t="service_care_h">Obsah & péče</h3><p data-t="service_care_p">Pravidelná údržba, optimalizace, produktové snímky i nový obsah. Váš web a vizuál mohou růst společně.</p></article>
+        <div class="flow" data-reveal>
+          <p class="flow-title" id="flow-title" data-i18n="kavka.flowTitle">Cesta objednávky</p>
+          <ol class="flow-list" aria-labelledby="flow-title" role="list">
+            <li><span class="flow-node" aria-hidden="true"></span><strong data-i18n="kavka.flow.1.t">Košík</strong><span data-i18n="kavka.flow.1.p">kupón nebo slevový kód</span></li>
+            <li><span class="flow-node" aria-hidden="true"></span><strong data-i18n="kavka.flow.2.t">Doprava</strong><span>Zásilkovna · Balíkovna</span></li>
+            <li><span class="flow-node" aria-hidden="true"></span><strong data-i18n="kavka.flow.3.t">Platba</strong><span data-i18n="kavka.flow.3.p">QR kódem</span></li>
+            <li><span class="flow-node" aria-hidden="true"></span><strong data-i18n="kavka.flow.4.t">Faktura</strong><span data-i18n="kavka.flow.4.p">vystavená automaticky</span></li>
+            <li><span class="flow-node" aria-hidden="true"></span><strong data-i18n="kavka.flow.5.t">Účetnictví</strong><span data-i18n="kavka.flow.5.p">export bez přepisování</span></li>
+          </ol>
+        </div>
+
+        <ul class="features" role="list">
+          <li class="feature" data-reveal>
+            <span class="feature-no">F–01</span>
+            <h3 class="feature-title" data-i18n="kavka.f1.t">Vlastní administrace a editor</h3>
+            <p data-i18n="kavka.f1.p">Přehledný administrační systém s vlastním editorem obsahu, produktů a stránek – bez závislosti na cizích šablonách.</p>
+          </li>
+          <li class="feature" data-reveal>
+            <span class="feature-no">F–02</span>
+            <h3 class="feature-title" data-i18n="kavka.f2.t">Sklad a košík</h3>
+            <p data-i18n="kavka.f2.p">Sledování stavu skladu v reálném čase, varianty produktů a rychlý košík s přehledným checkoutem.</p>
+          </li>
+          <li class="feature" data-reveal>
+            <span class="feature-no">F–03</span>
+            <h3 class="feature-title" data-i18n="kavka.f3.t">Zásilkovna a Balíkovna přes API</h3>
+            <p data-i18n="kavka.f3.p">Napojení dopravců přes API a výběr výdejního místa přímo v košíku.</p>
+          </li>
+          <li class="feature" data-reveal>
+            <span class="feature-no">F–04</span>
+            <h3 class="feature-title" data-i18n="kavka.f4.t">Kupóny a slevové kódy</h3>
+            <p data-i18n="kavka.f4.p">Neomezené přidávání kupónů a slevových kódů – procentuální, pevné, s omezením platnosti a počtu využití.</p>
+          </li>
+          <li class="feature" data-reveal>
+            <span class="feature-no">F–05</span>
+            <h3 class="feature-title" data-i18n="kavka.f5.t">Export pro účetnictví</h3>
+            <p data-i18n="kavka.f5.p">Export objednávek a faktur pro účetní programy – snadné předání účetní bez ručního přepisování.</p>
+          </li>
+          <li class="feature" data-reveal>
+            <span class="feature-no">F–06</span>
+            <h3 class="feature-title" data-i18n="kavka.f6.t">Automatické faktury a QR platba</h3>
+            <p data-i18n="kavka.f6.p">Faktura se vygeneruje automaticky ke každé objednávce, včetně QR kódu pro platbu – zákazník zaplatí okamžitě.</p>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="section photo" id="fotografie">
-    <div class="wrap">
-      <div class="section-head reveal"><div><div class="eyebrow" data-t="photo_kicker">Fotografické služby</div><h2 class="display" data-t-html="photo_title">Skutečné chvíle.<br>Poctivé fotografie.</h2></div><p data-t="photo_intro">Nejde mi o strnulé pózy. Hledám světlo, drobné detaily a okamžiky, které mají atmosféru. Výsledné snímky upravuji v jednotném, přirozeném stylu.</p></div>
-      <div class="photo-grid">
-        <article class="photo-card reveal"><img src="assets/photo-corporate.jpg" loading="lazy" alt="Prázdný konferenční sál připravený pro firemní akci" width="1536" height="1024"><div class="photo-info"><span class="num">01 — BUSINESS</span><h3 data-t="corp_h">Firemní akce</h3><p data-t="corp_p">Konference, večírky, otevření provozovny i zákulisí vašeho týmu. Reportáž, která ukáže atmosféru i značku.</p></div></article>
-        <article class="photo-card reveal"><img src="assets/photo-wedding.jpg" loading="lazy" alt="Svatební prsteny položené mezi květinami" width="1536" height="1024"><div class="photo-info"><span class="num">02 — WEDDING</span><h3 data-t="wedding_h">Svatby</h3><p data-t="wedding_p">Od tichých příprav po večerní oslavu. Váš den zachytím citlivě, nenápadně a v celém jeho příběhu.</p></div></article>
-        <article class="photo-card reveal"><img src="assets/photo-family.jpg" loading="lazy" alt="Útulný rodinný interiér s dřevěnou hračkou" width="1536" height="1024"><div class="photo-info"><span class="num">03 — FAMILY</span><h3 data-t="family_h">Rodinné focení</h3><p data-t="family_p">U vás doma nebo venku, kde je vám dobře. Bez stresu, s prostorem pro spontánnost a opravdové emoce.</p></div></article>
+  <!-- ============ 03 / REFERENCE ============ -->
+  <section class="section t-light" id="reference" aria-labelledby="reference-title">
+    <div class="container section-grid">
+      <p class="rail" aria-hidden="true"><span class="rail-no">03</span><span class="rail-name" data-i18n="nav.work">Reference</span></p>
+      <div class="section-body">
+        <header class="section-head" data-reveal>
+          <h2 class="h2" id="reference-title" data-i18n="work.title">Weby pro skutečné firmy.</h2>
+          <p class="section-intro" data-i18n="work.intro">Žádné koncepty do šuplíku. Tohle jsou weby, které slouží skutečným firmám a jejich zákazníkům – a jeden, na kterém právě pracuji.</p>
+        </header>
       </div>
-      <div class="photo-note reveal"><p data-t="photo_note">Každou zakázku nacením individuálně podle délky focení, místa a výsledného rozsahu. Napište mi pár vět o své představě a ozvu se s konkrétní nabídkou.</p><a class="btn btn-light btn-arrow" href="#kontakt" data-t="photo_cta">Poptat focení</a></div>
+    </div>
+
+    <div class="container">
+      <ol class="work" role="list">
+        <li class="work-item" data-reveal>
+          <a class="work-link" href="https://vdstavby.cz" target="_blank" rel="noopener">
+            <span class="work-no" aria-hidden="true">01</span>
+            <div class="work-main">
+              <h3 class="work-name">VD Stavby</h3>
+              <p class="work-type" data-i18n="work.1.type">Firemní web · Stavebnictví</p>
+            </div>
+            <div class="work-info">
+              <p class="work-desc" data-i18n="work.1.desc">Moderní prezentace stavební firmy s důrazem na přehlednost služeb, ukázky realizací a kontaktní formulář.</p>
+              <div class="tags"><span class="tag" data-i18n="tag.multi">Vícestránkový web</span><span class="tag" data-i18n="tag.portfolio">Realizace</span><span class="tag" data-i18n="tag.form">Formulář</span></div>
+            </div>
+            <div class="work-go"><span class="work-domain">vdstavby.cz</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-ne"/></svg><span class="sr-only" data-i18n="a11y.newTab">(otevře se v novém okně)</span></div>
+          </a>
+        </li>
+        <li class="work-item" data-reveal>
+          <a class="work-link" href="https://ddhomeinvest.cz" target="_blank" rel="noopener">
+            <span class="work-no" aria-hidden="true">02</span>
+            <div class="work-main">
+              <h3 class="work-name">DD Home Invest</h3>
+              <p class="work-type" data-i18n="work.2.type">One-page · Reality</p>
+            </div>
+            <div class="work-info">
+              <p class="work-desc" data-i18n="work.2.desc">Pokročilý jednostránkový web s integrovaným katalogem a propracovaným kontaktním formulářem.</p>
+              <div class="tags"><span class="tag" data-i18n="tag.one">One-page</span><span class="tag" data-i18n="tag.catalog">Katalog</span><span class="tag" data-i18n="tag.contactForm">Kontaktní formulář</span></div>
+            </div>
+            <div class="work-go"><span class="work-domain">ddhomeinvest.cz</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-ne"/></svg><span class="sr-only" data-i18n="a11y.newTab">(otevře se v novém okně)</span></div>
+          </a>
+        </li>
+        <li class="work-item" data-reveal>
+          <a class="work-link" href="https://dvstav.cz" target="_blank" rel="noopener">
+            <span class="work-no" aria-hidden="true">03</span>
+            <div class="work-main">
+              <h3 class="work-name">DV Stav</h3>
+              <p class="work-type" data-i18n="work.3.type">Vícestránkový web · Stavebnictví</p>
+            </div>
+            <div class="work-info">
+              <p class="work-desc" data-i18n="work.3.desc">Profesionální vícestránkový web pro stavební práce. Obsahuje sekci referencí a interaktivní mapu se sídlem firmy.</p>
+              <div class="tags"><span class="tag" data-i18n="tag.multi">Vícestránkový web</span><span class="tag" data-i18n="tag.refs">Reference</span><span class="tag" data-i18n="tag.map">Interaktivní mapa</span></div>
+            </div>
+            <div class="work-go"><span class="work-domain">dvstav.cz</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-ne"/></svg><span class="sr-only" data-i18n="a11y.newTab">(otevře se v novém okně)</span></div>
+          </a>
+        </li>
+        <li class="work-item" data-reveal>
+          <a class="work-link" href="https://myskyvyroba.cz" target="_blank" rel="noopener">
+            <span class="work-no" aria-hidden="true">04</span>
+            <div class="work-main">
+              <h3 class="work-name">Myšky Výroba</h3>
+              <p class="work-type" data-i18n="work.4.type">Katalog · Ruční výroba</p>
+            </div>
+            <div class="work-info">
+              <p class="work-desc" data-i18n="work.4.desc">Katalogový vícestránkový web a prezentace zakázkové výroby originálních dekorací do domácnosti.</p>
+              <div class="tags"><span class="tag" data-i18n="tag.multi">Vícestránkový web</span><span class="tag" data-i18n="tag.products">Katalog produktů</span><span class="tag" data-i18n="tag.inquiry">Poptávkový formulář</span></div>
+            </div>
+            <div class="work-go"><span class="work-domain">myskyvyroba.cz</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-ne"/></svg><span class="sr-only" data-i18n="a11y.newTab">(otevře se v novém okně)</span></div>
+          </a>
+        </li>
+        <li class="work-item" data-reveal>
+          <a class="work-link" href="https://stavbycernik.cz" target="_blank" rel="noopener">
+            <span class="work-no" aria-hidden="true">05</span>
+            <div class="work-main">
+              <h3 class="work-name">Stavby Černík</h3>
+              <p class="work-type" data-i18n="work.5.type">Firemní web · Stavebnictví</p>
+            </div>
+            <div class="work-info">
+              <p class="work-desc" data-i18n="work.5.desc">Moderní webová prezentace pro stavební společnost. Projekt je aktuálně ve vývoji.</p>
+              <div class="tags"><span class="tag tag--wip" data-i18n="tag.wip">Ve vývoji</span><span class="tag" data-i18n="tag.corp">Firemní web</span></div>
+            </div>
+            <div class="work-go"><span class="work-domain">stavbycernik.cz</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-ne"/></svg><span class="sr-only" data-i18n="a11y.newTab">(otevře se v novém okně)</span></div>
+          </a>
+        </li>
+        <li class="work-item work-item--next" data-reveal>
+          <a class="work-link" href="#kontakt">
+            <span class="work-no" aria-hidden="true">06</span>
+            <div class="work-main">
+              <h3 class="work-name" data-i18n="work.next.t">Váš projekt</h3>
+              <p class="work-type" data-i18n="work.next.type">Další může být váš</p>
+            </div>
+            <div class="work-info">
+              <p class="work-desc" data-i18n="work.next.desc">Pojďme vytvořit něco, co bude fungovat i bavit.</p>
+            </div>
+            <div class="work-go"><span class="work-domain" data-i18n="work.next.cta">Napsat mi</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+          </a>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <section class="section" id="kavka">
-    <div class="wrap"><div class="kavka-card reveal"><div><div class="eyebrow" data-t="kavka_kicker">Vlastní řešení</div><h2 class="display">KAVKA</h2></div><div class="kavka-content"><p data-t="kavka_text">E-shop, který se přizpůsobí vašemu podnikání — ne naopak. Bez závislosti na cizí šabloně a s funkcemi, které skutečně využijete.</p><div class="features"><span class="feature" data-t="f1">Vlastní administrace a editor</span><span class="feature" data-t="f2">Sklad a chytrý košík</span><span class="feature" data-t="f3">Zásilkovna & Balíkovna API</span><span class="feature" data-t="f4">Kupóny a slevové kódy</span><span class="feature" data-t="f5">Export pro účetnictví</span><span class="feature" data-t="f6">Faktury a QR platby</span></div><a class="btn btn-dark btn-arrow" href="#kontakt" data-t="kavka_cta">Chci vlastní e-shop</a></div></div></div>
-  </section>
+  <!-- ============ 04 / POSTUP ============ -->
+  <section class="section t-white" id="proces" aria-labelledby="proces-title">
+    <div class="container section-grid">
+      <p class="rail" aria-hidden="true"><span class="rail-no">04</span><span class="rail-name" data-i18n="nav.process">Postup</span></p>
+      <div class="section-body">
+        <header class="section-head" data-reveal>
+          <h2 class="h2" id="proces-title" data-i18n="process.title">Jak spolupráce probíhá.</h2>
+          <p class="section-intro" data-i18n="process.intro">Zakládám si na transparentnosti a plynulé komunikaci. O svůj projekt se nemusíte bát – celým procesem vás provedu.</p>
+        </header>
 
-  <section class="section work" id="reference">
-    <div class="wrap"><div class="section-head reveal"><div><div class="eyebrow" data-t="work_kicker">Vybrané weby</div><h2 class="display" data-t="work_title">Práce v provozu.</h2></div><p data-t="work_intro">Žádné koncepty do šuplíku. Tohle jsou weby, které dnes slouží skutečným firmám a jejich zákazníkům.</p></div>
-      <div class="refs">
-        <a class="ref reveal" href="https://vdstavby.cz" target="_blank" rel="noopener"><span class="ref-type">Firemní web / Stavebnictví</span><span class="arrow">↗</span><h3>VD Stavby</h3><p data-t="r1">Přehled služeb, reference a kontaktní formulář.</p></a>
-        <a class="ref reveal" href="https://ddhomeinvest.cz" target="_blank" rel="noopener"><span class="ref-type">One-page / Reality</span><span class="arrow">↗</span><h3>DD Home Invest</h3><p data-t="r2">Integrovaný katalog a propracovaný kontakt.</p></a>
-        <a class="ref reveal" href="https://dvstav.cz" target="_blank" rel="noopener"><span class="ref-type">Vícestránkový web</span><span class="arrow">↗</span><h3>DV Stav</h3><p data-t="r3">Reference, přehled služeb a interaktivní mapa.</p></a>
-        <a class="ref reveal" href="https://myskyvyroba.cz" target="_blank" rel="noopener"><span class="ref-type">Katalog / Výroba</span><span class="arrow">↗</span><h3>Myšky Výroba</h3><p data-t="r4">Katalog originální zakázkové tvorby.</p></a>
-        <a class="ref reveal" href="https://stavbycernik.cz" target="_blank" rel="noopener"><span class="ref-type">Firemní web</span><span class="arrow">↗</span><h3>Stavby Černík</h3><p data-t="r5">Moderní prezentace stavební společnosti.</p></a>
-        <a class="ref reveal" href="#kontakt"><span class="ref-type" data-t="next_type">Další může být váš</span><span class="arrow">↗</span><h3 data-t="next_h">Nový projekt</h3><p data-t="next_p">Pojďme vytvořit něco, co bude fungovat i bavit.</p></a>
+        <ol class="steps" role="list">
+          <li class="step" data-reveal>
+            <span class="step-no" aria-hidden="true">01</span>
+            <h3 class="step-title" data-i18n="process.1.t">Konzultace a nabídka</h3>
+            <p data-i18n="process.1.p">Společně si definujeme, co váš web potřebuje. Následně sestavím transparentní cenovou nabídku bez skrytých háčků.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-no" aria-hidden="true">02</span>
+            <h3 class="step-title" data-i18n="process.2.t">Grafický návrh</h3>
+            <p data-i18n="process.2.p">Než napíšu první řádek kódu, připravím interaktivní vizuální návrh přesně podle vaší firemní identity a cílů.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-no" aria-hidden="true">03</span>
+            <h3 class="step-title" data-i18n="process.3.t">Vývoj</h3>
+            <p data-i18n="process.3.p">Grafiku převedu do rychlého, čistého kódu, nastavím administraci a zajistím perfektní zobrazení i na mobilech.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-no" aria-hidden="true">04</span>
+            <h3 class="step-title" data-i18n="process.4.t">Testování a spuštění</h3>
+            <p data-i18n="process.4.p">Web důkladně otestujeme, napojíme na analytiku, zajistíme základní SEO a vypustíme ho do světa.</p>
+          </li>
+        </ol>
+
+        <p class="after" data-reveal><strong data-i18n="process.after.t">A po spuštění?</strong> <span data-i18n="process.after.p">Pokud budete chtít, zůstávám nablízku – s údržbou, úpravami i novým obsahem.</span></p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="proces">
-    <div class="wrap"><div class="section-head reveal"><div><div class="eyebrow" data-t="process_kicker">Jak spolupráce probíhá</div><h2 class="display" data-t="process_title">Jasně. Lidsky. Společně.</h2></div><p data-t="process_intro">Ať jde o nový web nebo svatební den, vždy budete vědět, co se děje, kdy bude hotovo a kolik to bude stát.</p></div>
-      <div class="process-list">
-        <div class="step reveal"><h3 data-t="p1h">Seznámení</h3><p data-t="p1p">Řeknete mi svou představu, cíle a termín. Doptám se na vše podstatné a doporučím nejlepší cestu.</p></div>
-        <div class="step reveal"><h3 data-t="p2h">Návrh & nabídka</h3><p data-t="p2p">Připravím srozumitelný rozsah, cenovou nabídku a harmonogram bez skrytých překvapení.</p></div>
-        <div class="step reveal"><h3 data-t="p3h">Tvorba</h3><p data-t="p3p">Navrhuji, programuji nebo fotografuji. V průběhu zůstáváme v kontaktu a společně ladíme výsledek.</p></div>
-        <div class="step reveal"><h3 data-t="p4h">Předání & péče</h3><p data-t="p4p">Dostanete hotový web nebo pečlivě upravené fotografie. A pokud budete chtít, zůstávám nablízku i potom.</p></div>
+  <!-- ============ 05 / DOTAZY ============ -->
+  <section class="section t-light" id="faq" aria-labelledby="faq-title">
+    <div class="container section-grid">
+      <p class="rail" aria-hidden="true"><span class="rail-no">05</span><span class="rail-name" data-i18n="nav.faq">Dotazy</span></p>
+      <div class="section-body faq-layout">
+        <header class="faq-head" data-reveal>
+          <h2 class="h2" id="faq-title" data-i18n="faq.title">Na co se lidé ptají.</h2>
+          <p class="section-intro"><span data-i18n="faq.intro1">Nenašli jste tu odpověď?</span> <a href="#kontakt" data-i18n="faq.intro2">Napište mi</a><span data-i18n="faq.intro3"> – rád poradím.</span></p>
+        </header>
+
+        <div class="faq" data-reveal>
+          <div class="faq-item is-open">
+            <h3 class="faq-q"><button type="button" id="faq-q1" aria-expanded="true" aria-controls="faq-a1"><span data-i18n="faq.1.q">Kolik stojí web?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div class="faq-a-inner"><p data-i18n="faq.1.a">Každý projekt je jiný, proto cenu připravuji na míru. Po krátké úvodní konzultaci ode mě dostanete konkrétní nabídku – zdarma a bez závazků.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q"><button type="button" id="faq-q2" aria-expanded="false" aria-controls="faq-a2"><span data-i18n="faq.2.q">Jak dlouho trvá vytvoření webu?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div class="faq-a-inner"><p data-i18n="faq.2.a">Záleží na složitosti. Jednoduchá firemní vizitka může být hotová do týdne. Rozsáhlejší vícestránkový web nebo e-shop obvykle zabere 2 až 4 týdny podle rozsahu a připravenosti podkladů.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q"><button type="button" id="faq-q3" aria-expanded="false" aria-controls="faq-a3"><span data-i18n="faq.3.q">Co ode mě budete potřebovat?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div class="faq-a-inner"><p data-i18n="faq.3.a">Na začátku mi stačí stručně popsat, čím se zabýváte a jaký je cíl webu. Pokud máte logo, fotky a texty, je to skvělé. Pokud ne, pomohu vám najít vhodné řešení – například copywriting nebo úpravu loga.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q"><button type="button" id="faq-q4" aria-expanded="false" aria-controls="faq-a4"><span data-i18n="faq.4.q">Budu si moci web upravovat sám?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div class="faq-a-inner"><p data-i18n="faq.4.a">Ano, pokud si to budete přát. Připravím přehlednou administraci a ukážu vám, jak měnit texty, fotografie nebo produkty – bez znalosti programování.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q"><button type="button" id="faq-q5" aria-expanded="false" aria-controls="faq-a5"><span data-i18n="faq.5.q">Co umí e-shop KAVKA?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div class="faq-a-inner"><p data-i18n="faq.5.a">KAVKA je moje vlastní e-shopové řešení. Obsahuje vlastní administrační systém a editor, sledování skladu, košík a checkout, napojení dopravců Zásilkovna a Balíkovna přes API, kupóny a slevové kódy, export objednávek pro účetnictví a automatické generování faktur včetně QR kódu pro platbu.</p></div></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section faq">
-    <div class="wrap faq-layout"><div class="reveal"><div class="eyebrow">FAQ</div><h2 class="display" data-t-html="faq_title">Možná vás<br>napadá…</h2></div><div class="faq-items reveal">
-      <div class="faq-item"><button class="faq-q" aria-expanded="false"><span data-t="q1">Kolik stojí web nebo focení?</span><span>＋</span></button><div class="faq-a"><div><p data-t="a1">Každý projekt je jiný, proto cenu připravuji na míru. Po krátké úvodní konzultaci ode mě dostanete konkrétní nabídku zdarma a bez závazků.</p></div></div></div>
-      <div class="faq-item"><button class="faq-q" aria-expanded="false"><span data-t="q2">Jak dlouho trvá vytvoření webu?</span><span>＋</span></button><div class="faq-a"><div><p data-t="a2">Jednodušší web může být hotový do týdne. Rozsáhlejší prezentace nebo e-shop obvykle zabere 2 až 4 týdny podle rozsahu a připravenosti podkladů.</p></div></div></div>
-      <div class="faq-item"><button class="faq-q" aria-expanded="false"><span data-t="q3">Kde fotografujete?</span><span>＋</span></button><div class="faq-a"><div><p data-t="a3">Za focením rád přijedu po celé České republice. Rodinné focení může proběhnout u vás doma nebo venku, akce a svatby přímo na místě konání.</p></div></div></div>
-      <div class="faq-item"><button class="faq-q" aria-expanded="false"><span data-t="q4">Jak fotografie dostanu?</span><span>＋</span></button><div class="faq-a"><div><p data-t="a4">Pečlivě vybrané a upravené snímky dostanete v online galerii ve vysokém rozlišení i ve verzi vhodné pro sdílení.</p></div></div></div>
-      <div class="faq-item"><button class="faq-q" aria-expanded="false"><span data-t="q5">Budu si moci web upravovat?</span><span>＋</span></button><div class="faq-a"><div><p data-t="a5">Ano. Pokud si to přejete, připravím přehlednou administraci a ukážu vám, jak měnit texty, fotografie nebo produkty bez programování.</p></div></div></div>
-    </div></div>
-  </section>
+  <!-- ============ 06 / KONTAKT ============ -->
+  <section class="contact t-blue" id="kontakt" aria-labelledby="kontakt-title">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container section-grid">
+      <p class="rail" aria-hidden="true"><span class="rail-no">06</span><span class="rail-name" data-i18n="nav.contact">Kontakt</span></p>
+      <div class="section-body">
+        <h2 class="contact-title" id="kontakt-title" data-reveal>
+          <span class="hero-line hero-line--outline"><span data-i18n="contact.t1">Máte nápad?</span></span>
+          <span class="hero-line"><span data-i18n="contact.t2">Pojďme ho</span></span>
+          <span class="hero-line"><span data-i18n="contact.t3">postavit.</span></span>
+        </h2>
 
-  <section class="contact" id="kontakt">
-    <div class="wrap"><div class="contact-top"><div><div class="eyebrow" data-t="contact_kicker">Máte nápad?</div><h2 class="display" data-t-html="contact_title">Pojďme ho<br><em>uskutečnit.</em></h2></div><div class="contact-side"><p data-t="contact_text">Napište mi pár vět o svém webu, akci, svatbě nebo rodinném focení. Ozvu se a domluvíme další krok.</p><a class="email" href="mailto:janminarikcz@icloud.com">janminarikcz@icloud.com</a></div></div><div class="footer"><span>© 2026 Jan Minařík</span><span data-t="footer">Webdesign • e-shopy • fotografie</span><a href="#top" data-t="up">Zpět nahoru ↑</a></div></div>
+        <div class="contact-grid">
+          <div class="contact-intro" data-reveal>
+            <p class="lead" data-i18n="contact.lead">Napište mi pár vět o svém projektu. Ozvu se a domluvíme další krok – nabídku připravím zdarma a nezávazně.</p>
+            <dl class="specs">
+              <div><dt data-i18n="contact.s1.k">Cenová nabídka</dt><dd data-i18n="contact.s1.v">zdarma a nezávazně</dd></div>
+              <div><dt data-i18n="contact.s2.k">Jednoduchý web</dt><dd data-i18n="contact.s2.v">hotový i do týdne</dd></div>
+              <div><dt data-i18n="contact.s3.k">Větší web nebo e-shop</dt><dd data-i18n="contact.s3.v">obvykle 2–4 týdny</dd></div>
+              <div><dt data-i18n="contact.s4.k">Působnost</dt><dd data-i18n="contact.s4.v">celá Česká republika</dd></div>
+            </dl>
+          </div>
+
+          <div class="contact-box" data-reveal>
+            <p class="kicker" data-i18n="contact.mailLabel">Napište mi na</p>
+            <a class="contact-mail" href="mailto:janminarikcz@icloud.com">janminarikcz<wbr>@icloud.com</a>
+            <div class="contact-actions">
+              <button type="button" class="btn btn-ghost btn-sm" id="copy-mail" data-mail="janminarikcz@icloud.com"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span id="copy-mail-label" data-i18n="contact.copy">Zkopírovat e-mail</span></button>
+              <span class="sr-only" role="status" aria-live="polite" id="copy-status"></span>
+            </div>
+
+            <p class="kicker quick-label" data-i18n="contact.quickLabel">Nebo rovnou s předmětem</p>
+            <ul class="quick" role="list">
+              <li><a class="quick-link" data-mail-topic="web" href="mailto:janminarikcz@icloud.com?subject=Popt%C3%A1vka%3A%20nov%C3%BD%20web"><span data-i18n="contact.q1">Chci nový web</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+              <li><a class="quick-link" data-mail-topic="shop" href="mailto:janminarikcz@icloud.com?subject=Popt%C3%A1vka%3A%20e-shop%20KAVKA"><span data-i18n="contact.q2">Chci e-shop KAVKA</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+              <li><a class="quick-link" data-mail-topic="care" href="mailto:janminarikcz@icloud.com?subject=Popt%C3%A1vka%3A%20%C3%BAprava%20st%C3%A1vaj%C3%ADc%C3%ADho%20webu"><span data-i18n="contact.q3">Chci vylepšit stávající web</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
 
-<script>
-const i18n={en:{
-nav_services:'Services',nav_photo:'Photography',nav_work:'Work',nav_process:'Process',nav_contact:'Get in touch',hero_kicker:'Web design & photography',hero_title:'I build websites.<br><em>I capture moments.</em>',hero_text:'I help brands and people tell their story — through a clean website, a functional e-shop, or photographs you will keep coming back to.',hero_cta:'Explore my services',available:'Available for new projects',sticker:'Web<br>photo<br>& ideas',tag:'From the first pixel to the last frame.',services_kicker:'What I can do for you',services_title:'Two disciplines.<br>One signature.',services_intro:'I combine a developer’s technical thinking with an eye for composition and story. The result is a brand that works beautifully and has a face of its own.',service_web_h:'Custom websites',service_web_p:'Modern, fast and clear websites without generic templates. From first concept through development to launch and care.',service_shop_h:'KAVKA e-shops',service_shop_p:'My own e-commerce solution with admin, stock, carriers, coupons, invoices and QR payments.',service_photo_h:'Photography',service_photo_p:'Natural coverage of corporate events, weddings and family stories. Discreet, thoughtful and without unnecessary staging.',service_care_h:'Content & care',service_care_p:'Regular maintenance, optimisation, product imagery and fresh content. Your website and visuals can grow together.',photo_kicker:'Photography services',photo_title:'Real moments.<br>Honest photographs.',photo_intro:'I am not after stiff poses. I look for light, small details and moments with atmosphere. Every final image is edited in a consistent, natural style.',corp_h:'Corporate events',corp_p:'Conferences, parties, openings and behind the scenes with your team. A report that captures both atmosphere and brand.',wedding_h:'Weddings',wedding_p:'From quiet preparations to the evening celebration. I capture your day sensitively, discreetly and as a complete story.',family_h:'Family sessions',family_p:'At home or outdoors where you feel good. No stress, with room for spontaneity and genuine emotion.',photo_note:'Every assignment is quoted individually based on session length, location and final scope. Tell me a little about your idea and I will reply with a clear proposal.',photo_cta:'Enquire about a session',kavka_kicker:'My own solution',kavka_text:'An e-shop that adapts to your business — not the other way around. No dependence on a third-party template and only the features you really use.',f1:'Custom admin and editor',f2:'Stock and smart cart',f3:'Zásilkovna & Balíkovna API',f4:'Coupons and discount codes',f5:'Accounting export',f6:'Invoices and QR payments',kavka_cta:'I want my own e-shop',work_kicker:'Selected websites',work_title:'Work in the wild.',work_intro:'No concepts collecting dust. These are websites serving real businesses and their customers today.',r1:'Services, projects and a contact form.',r2:'Integrated catalogue and a polished contact flow.',r3:'Portfolio, services and an interactive map.',r4:'A catalogue for original custom production.',r5:'A modern presentation for a construction company.',next_type:'Yours could be next',next_h:'New project',next_p:'Let’s make something that works and delights.',process_kicker:'How it works',process_title:'Clear. Human. Together.',process_intro:'Whether it is a new website or a wedding day, you will always know what is happening, when it will be ready and what it will cost.',p1h:'Introduction',p1p:'You tell me your idea, goals and timing. I ask the right questions and recommend the best path.',p2h:'Plan & quote',p2p:'I prepare a clear scope, quote and schedule with no hidden surprises.',p3h:'Creation',p3p:'I design, code or photograph. We stay in touch and shape the result together as the work progresses.',p4h:'Delivery & care',p4p:'You receive a finished website or carefully edited photographs. And if you want, I remain available afterwards.',faq_title:'You might<br>be wondering…',q1:'How much does a website or session cost?',a1:'Every project is different, so I quote individually. After a short initial call, you receive a clear proposal free of charge and with no obligation.',q2:'How long does a website take?',a2:'A simple website can be ready within a week. A larger presentation or e-shop usually takes 2 to 4 weeks depending on scope and available content.',q3:'Where do you photograph?',a3:'I am happy to travel anywhere in the Czech Republic. Family sessions can take place at your home or outdoors; events and weddings at their venue.',q4:'How will I receive the photographs?',a4:'You receive a carefully selected and edited set in an online gallery, both in high resolution and in a version suitable for sharing.',q5:'Will I be able to edit the website?',a5:'Yes. If you wish, I will provide a clear admin interface and show you how to change text, photographs or products without coding.',contact_kicker:'Have an idea?',contact_title:'Let’s make it<br><em>happen.</em>',contact_text:'Tell me a little about your website, event, wedding or family session. I will get back to you and we will agree on the next step.',footer:'Web design • e-shops • photography',up:'Back to top ↑'
-}};
-let lang='cs';
-document.querySelectorAll('[data-t]').forEach(el=>el.dataset.cs=el.textContent);
-document.querySelectorAll('[data-t-html]').forEach(el=>el.dataset.csHtml=el.innerHTML);
-function setLang(next){
-  lang=next; document.documentElement.lang=next;
-  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===next));
-  document.querySelectorAll('[data-t]').forEach(el=>{const v=next==='cs'?el.dataset.cs:i18n[next]?.[el.dataset.t];if(v)el.textContent=v});
-  document.querySelectorAll('[data-t-html]').forEach(el=>{const v=next==='cs'?el.dataset.csHtml:i18n[next]?.[el.dataset.tHtml];if(v)el.innerHTML=v});
-}
-document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-document.querySelectorAll('.faq-q').forEach(btn=>btn.addEventListener('click',()=>{const item=btn.closest('.faq-item'),open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false')});if(!open){item.classList.add('open');btn.setAttribute('aria-expanded','true')}}));
-const header=document.getElementById('header');addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>30),{passive:true});
-const reveal=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');reveal.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>reveal.observe(el));
-if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));
-</script>
+<footer class="site-footer t-dark">
+  <div class="container">
+    <dl class="titleblock">
+      <div><dt data-i18n="footer.k1">Projekt</dt><dd>JMWEB.cz</dd></div>
+      <div><dt data-i18n="footer.k2">Autor</dt><dd>Jan Minařík</dd></div>
+      <div><dt data-i18n="footer.k3">Obsah</dt><dd data-i18n="footer.v3">Weby · e-shopy · údržba</dd></div>
+      <div><dt data-i18n="footer.k4">Měřítko</dt><dd>1 : 1</dd></div>
+      <div><dt data-i18n="footer.k5">Verze</dt><dd>6.0</dd></div>
+    </dl>
+
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 JMWEB – Jan Minařík</p>
+      <ul class="footer-nav" role="list">
+        <li><a href="#sluzby" data-i18n="nav.services">Služby</a></li>
+        <li><a href="#kavka" data-i18n="nav.kavka">E-shop KAVKA</a></li>
+        <li><a href="#reference" data-i18n="nav.work">Reference</a></li>
+        <li><a href="#proces" data-i18n="nav.process">Postup</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">Dotazy</a></li>
+        <li><a href="#kontakt" data-i18n="nav.contact">Kontakt</a></li>
+      </ul>
+      <a class="to-top" href="#top"><span data-i18n="footer.top">Zpět nahoru</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
